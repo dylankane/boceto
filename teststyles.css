@@ -1,0 +1,145 @@
+:root {
+    --img-w: 220px;
+    --img-h: 220px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    font-family: 'Quicksand' sans-serif;
+}
+
+/* Scene only active on the green screen */
+.scene {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.scene.hidden {
+    display: none;
+}
+
+.img-bottom {
+    position: fixed;
+    width: var(--img-w);
+    height: var(--img-h);
+    left: 0;
+    bottom: 0;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.img-top {
+    position: fixed;
+    width: var(--img-w);
+    height: var(--img-h);
+    left: 6rem;
+    bottom: 6rem;
+    object-fit: cover;
+    z-index: 2;
+    will-change: transform;
+}
+
+/* ---- Scene text that fades with progress ---- */
+.scene-copy {
+    position: fixed;
+    inset: 0;
+    display: block;
+    pointer-events: none;
+}
+
+.subtitle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    text-align: center;
+    font: 600 clamp(1rem, 4vw, 1.75rem)/1.2 system-ui;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, .35);
+    opacity: 1;
+    /* JS animates this 1 → 0 */
+    will-change: opacity;
+}
+
+.quote {
+    position: absolute;
+    right: clamp(1rem, 4vw, 3rem);
+    bottom: clamp(1rem, 4vw, 3rem);
+    max-width: min(40ch, 45vw);
+    text-align: right;
+    font: 500 clamp(.9rem, 2.8vw, 1.1rem)/1.35 system-ui;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, .35);
+    opacity: 0;
+    /* JS animates this 0 → 1 */
+    will-change: opacity;
+}
+
+/* Content */
+main {
+    position: relative;
+    z-index: 0;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* horizontal */
+    justify-content: center;
+    /* vertical default */
+    font: 600 2rem/1.1 system-ui;
+}
+
+.green {
+    background: #4c0a79;
+    color: #98bba7;
+    justify-content: flex-start;
+    padding-top: clamp(3rem, 12vh, 14rem);
+}
+
+.cream {
+    background: #f5efe6;
+    color: #2b2b2b;
+}
+
+/* Box that controls title width */
+.title-box {
+    width: 100vw;
+    /* your “fills 80% of screen” box */
+    margin: 0 auto;
+    container-type: inline-size;
+    /* enables cqw */
+}
+
+/* Title scales with .title-box width */
+.title {
+    margin: 0;
+    text-align: center;
+    line-height: 0.9;
+    font-weight: 800;
+    font-size: 25cqw;
+    /* 1cqw = 1% of container width */
+    text-wrap: balance;
+}
+
+/* Fallback if cqw isn't supported */
+@supports not (font-size: 1cqw) {
+    .title {
+        font-size: clamp(32px, 12vw, 180px);
+    }
+}
