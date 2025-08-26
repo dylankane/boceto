@@ -1,0 +1,1034 @@
+:root {
+    --color-orange: #eb9515;
+    --color-purple: #5c2b7c;
+    --color-green: #98bba7;
+    --color-cream: #f5efe6;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-dark: #312f2f;
+    --bg: var(--color-purple);
+    --text: var(--color-cream);
+    --link-hover: var(--color-green);
+    --link-active: var(--color-green);
+    --h1: var(--color-green);
+    --h2: var(--color-green);
+    --accent1: var(--color-white);
+    --accent2: var(--color-dark);
+    --accent3: var(--color-orange);
+
+}
+
+/* =========================
+   Themes (override values)
+   ========================= */
+
+
+body[data-theme="theme-1"] {
+    --bg: var(--color-purple);
+    --text: var(--color-cream);
+    --h1: var(--color-green);
+    --h2: var(--color-green);
+    --link-hover: var(--color-green);
+    --link-active: var(--color-green);
+    --accent1: var(--color-white);
+    --accent2: var(--color-dark);
+    --accent3: var(--color-orange);
+}
+
+body[data-theme="theme-2"] {
+    --bg: var(--color-cream);
+    --text: var(--color-black);
+    --h1: var(--color-green);
+    --h2: var(--color-black);
+    --link-hover: var(--color-dark);
+    --link-active: var(--color-green);
+    --accent1: var(--color-white);
+    --accent2: var(--color-dark);
+    --accent3: var(--color-dark);
+}
+
+body[data-theme="theme-3"] {
+    --bg: var(--color-dark);
+    --text: var(--color-cream);
+    --h1: var(--color-green);
+    --h2: var(--color-cream);
+    --link-hover: var(--color-orange);
+    --link-active: var(--color-orange);
+    --accent1: var(--color-white);
+    --accent2: var(--color-dark);
+    --accent3: var(--color-green);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    font-family: 'Fira Code', monospace;
+    color: var(--text);
+    background-color: var(--bg);
+    transition: background-color .6s ease, color .6s ease;
+}
+
+h1 {
+    font-family: 'Gasoek One', sans-serif;
+    color: var(--h1);
+}
+
+h2 {
+    font-family: 'Quicksand', sans-serif;
+    color: var(--h2);
+}
+
+h3 {
+    font-family: 'Quicksand', sans-serif;
+}
+
+p {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+}
+
+a.active {
+    color: var(--link-active);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+/* ===== Scene ===== */
+.scene {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    height: 100vh;
+    /* pointer-events: none; */
+}
+
+.scene.hidden {
+    display: none;
+}
+
+.img-bottom {
+    position: fixed;
+    width: 220px;
+    height: 220px;
+    left: 0;
+    bottom: 0;
+    object-fit: cover;
+    z-index: 1;
+}
+
+@media (max-width: 520px) {
+    .img-bottom {
+        width: 180px;
+        height: 180px;
+        left: -px;
+        bottom: 0;
+    }
+}
+
+.img-top {
+    position: fixed;
+    width: 220px;
+    height: 220px;
+    left: 6rem;
+    bottom: 6rem;
+    object-fit: cover;
+    z-index: 2;
+    will-change: transform;
+}
+
+@media (max-width: 520px) {
+    .img-top {
+        width: 180px;
+        height: 180px;
+        left: 3rem;
+        bottom: 6rem;
+    }
+}
+
+.scene-copy {
+    position: absolute;
+    inset: 0;
+    display: block;
+    /* pointer-events: none; */
+}
+
+/* .scene-copy p {
+    font-family: 'Fira Code', monospace;
+    font-size: 1.1rem;
+} */
+
+.scene-copy a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.subtitle {
+    position: fixed;
+    right: 10px;
+    top: 60%;
+    translate: -50% -50%;
+    text-align: right;
+    font-size: 1.1rem;
+    /* font: 600 clamp(1rem, 4vw, 1.75rem)/1.2 system-ui; */
+    /* color: #f5efe6; */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, .5);
+    opacity: 1;
+    will-change: opacity;
+}
+
+@media (max-width: 520px) {
+    .subtitle {
+        right: 0px;
+        top: 50%;
+        translate: -20% -50%;
+    }
+}
+
+.details {
+    position: absolute;
+    /* left: 10px;
+    bottom: 10px; */
+    left: clamp(1rem, 4vw, 3rem);
+    bottom: clamp(1rem, 10vw, 3rem);
+    color: var(--accent3);
+    /* text-shadow: 0 2px 10px rgba(0, 0, 0, .5); */
+    opacity: 0;
+    will-change: opacity;
+    text-decoration: none;
+}
+
+.quote {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, .35);
+    opacity: 0;
+    will-change: opacity;
+    /* max-width: min(40ch, 45vw); */
+    /* font: 500 clamp(.9rem, 2.8vw, 1.1rem)/1.35 system-ui; */
+    /* color: #f5efe6; */
+}
+
+@media (max-width: 520px) {
+    .quote {
+        left: 50%;
+        top: 50%;
+        /* translate: -20% -50%; */
+    }
+}
+
+.quote2 {
+    position: absolute;
+    right: clamp(1rem, 4vw, 3rem);
+    bottom: clamp(1rem, 4vw, 3rem);
+    max-width: min(40ch, 45vw);
+    text-align: right;
+    /* font: 500 clamp(.9rem, 2.8vw, 1.1rem)/1.35 system-ui; */
+    /* color: #f5efe6; */
+    /* text-shadow: 0 2px 10px rgba(0, 0, 0, .35); */
+    opacity: 1;
+    will-change: opacity;
+    color: var(--text);
+}
+
+main {
+    position: relative;
+    z-index: 0;
+    /* background: var(--color-purple);
+    color: var(--color-black); */
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero {
+    /* background: #5c2b7c; */
+    justify-content: flex-start;
+    padding-top: clamp(3rem, 12vh, 14rem);
+}
+
+
+.title-box {
+    width: 100vw;
+    margin: 0 auto;
+    container-type: inline-size;
+}
+
+.title {
+    margin: 0;
+    text-align: center;
+    line-height: 0.9;
+    font-weight: 400;
+    font-size: 22cqw;
+    text-wrap: balance;
+}
+
+@supports not (font-size: 1cqw) {
+    .title {
+        font-size: clamp(32px, 12vw, 180px);
+    }
+}
+
+/* =========================
+   Navigation (header & menu)
+   ========================= */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: transparent;
+    pointer-events: auto;
+}
+
+/* 3-column header: logo | center | button */
+.nav-inner {
+    height: 64px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 12px;
+    padding: 0 clamp(12px, 3vw, 24px);
+}
+
+/* Logo */
+.brand img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+/* Language selector (centered) */
+.lang-switch {
+    justify-self: center;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    font: 600 0.95rem/1 system-ui;
+    color: black;
+    user-select: none;
+}
+
+.lang-switch .lang {
+    color: black;
+    text-decoration: none;
+    opacity: .7;
+    padding: .2rem .4rem;
+    border-radius: .4rem;
+    transition: opacity .15s ease, background .15s ease;
+}
+
+.lang-switch .lang:hover {
+    opacity: .95;
+}
+
+.lang-switch .lang.active {
+    padding: 0.6rem;
+    opacity: 1;
+    background: rgba(152, 187, 167, 0.7);
+}
+
+.lang-switch .lang-sep {
+    opacity: .4;
+}
+
+/* Hamburger */
+.menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    background: transparent;
+    color: var(--text);
+    /* border-radius: 10px; */
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform .15s ease;
+}
+
+.menu-toggle:active {
+    transform: scale(0.96);
+}
+
+.menu-toggle .icon {
+    display: block;
+}
+
+.menu-toggle .icon-close {
+    display: none;
+}
+
+.site-header.open .menu-toggle .icon-menu {
+    display: none;
+}
+
+.site-header.open .menu-toggle .icon-close {
+    display: block;
+}
+
+/* Fullscreen overlay that slides in from the right */
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    background: rgba(12, 12, 16, 0.92);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transform: translateX(100%);
+    /* start off-canvas to the right */
+    opacity: 1;
+    /* keep 1 so only transform animates */
+    pointer-events: none;
+    transition: transform .28s ease;
+}
+
+.site-header.open .menu-overlay {
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+/* Exit button inside the overlay */
+.menu-exit {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.menu-exit:active {
+    transform: scale(0.96);
+}
+
+/* Centered menu list */
+.menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    display: grid;
+    place-items: center;
+    gap: clamp(12px, 2.8vh, 24px);
+}
+
+.menu-list a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: .02em;
+    font-size: clamp(1.6rem, 6vw, 3rem);
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+.menu-list a:hover {
+    opacity: .85;
+    transform: translateY(-2px);
+}
+
+/* Lock page scroll when menu is open */
+html.no-scroll,
+body.no-scroll {
+    overflow: hidden !important;
+}
+
+/* Smaller header on narrow screens */
+@media (max-width: 520px) {
+    .nav-inner {
+        height: 56px;
+    }
+
+    .brand img {
+        height: 45px;
+    }
+}
+
+/* ============ Main content (Flex, simple) ============ */
+
+
+.content-container {
+    max-width: 1100px;
+    width: 75vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+}
+
+/* Column 1: centered stack */
+.col-1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    margin: 0rem auto;
+}
+
+.content-title {
+    width: 75%;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+/* Landscape image (fixed size; responsive width cap) */
+.land-img {
+    width: 700px;
+    max-width: 100%;
+    height: 350px;
+    display: block;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.content-copy p {
+    margin: 0 auto 2rem auto;
+    max-width: 65ch;
+}
+
+.content-link {
+    position: relative;
+    display: inline-block;
+    /* needed for transform */
+    color: inherit;
+    text-decoration: none;
+    /* remove default underline */
+    transition: transform 0.3s ease;
+    /* smooth scale */
+}
+
+.content-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    /* adjust to match your desired offset */
+    width: 100%;
+    height: 1.5px;
+    background-color: currentColor;
+    /* matches text color */
+    transform-origin: left;
+    transform: scaleX(1);
+    opacity: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.content-link:hover {
+    transform: scale(1.1);
+    /* smooth grow */
+}
+
+.content-link:hover::after {
+    transform: scaleX(0);
+    /* underline shrinks */
+    opacity: 0;
+    /* fades out */
+}
+
+
+
+/* .content-link {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 1.5px;
+}
+
+.content-link:hover {
+    text-decoration: none;
+} */
+
+/* Column 2: alternating rows */
+.col-2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: relative;
+    margin: 0rem auto;
+}
+
+/* Each row: image + text aligned to image midline */
+.alt-row {
+    display: flex;
+    align-items: center;
+    /* center text to image's vertical center */
+    justify-content: center;
+    gap: 24px;
+    position: relative;
+}
+
+/* Vertical overlap between rows (simple negative margin) */
+.alt-row+.alt-row {
+    margin-top: -40px;
+    /* adjust to control how much they overlap */
+}
+
+/* Alternate sides */
+.left-image {
+    flex-direction: row;
+}
+
+/* .right-image {
+    flex-direction: row-reverse;
+} */
+
+/* Portrait images (fixed sizes) */
+.port-img {
+    width: 300px;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 16px;
+    flex-shrink: 0;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .12);
+    position: relative;
+    z-index: 1;
+}
+
+/* Text next to images */
+.alt-text {
+    max-width: 46ch;
+    min-width: 0;
+}
+
+.left-image .alt-text {
+    text-align: left;
+}
+
+.right-image .alt-text {
+    text-align: right;
+}
+
+.alt-text h3 {
+    margin: 0 0 6px;
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+.alt-text p {
+    margin: 0;
+    opacity: .9;
+}
+
+/* Responsive stack */
+@media (max-width: 980px) {
+    .col-2 {
+        gap: 48px;
+    }
+
+    .alt-row {
+        align-items: flex-start;
+        flex-direction: column;
+        /* stack image then text */
+        text-align: center;
+        gap: 16px;
+    }
+
+    .alt-row .alt-text {
+        width: 100%;
+        max-width: 300px;
+        text-align: left;
+        min-width: 0;
+        word-wrap: break-word;
+        overflow-wrap: anywhere;
+    }
+
+    .port-img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .alt-row.right-image {
+        flex-direction: column-reverse;
+    }
+
+    .right-image .alt-text {
+        text-align: left;
+    }
+
+    .alt-row+.alt-row {
+        margin-top: 20px;
+    }
+}
+
+/* ===== 3-col ===== */
+.col-3 {
+    display: flex;
+    justify-content: center;
+}
+
+.title-clip {
+    width: 100%;
+    height: auto;
+}
+
+
+/* ===== features row ===== */
+.features-row {
+    margin: 0rem auto;
+    display: flex;
+    gap: 32px;
+    min-width: 0;
+    width: 100%;
+}
+
+.feature {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    /* desktop: vertical stack */
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    padding: 24px;
+    border-radius: 12px;
+    /* optional subtle card feel */
+    /* box-shadow: 0 6px 24px rgba(0,0,0,.06); */
+    /* background: rgba(255,255,255,.04); */
+    min-width: 0;
+}
+
+.feature-logo {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    display: block;
+}
+
+.feature-body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.feature-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.feature-text {
+    margin: 0;
+    line-height: 1.5;
+    opacity: .9;
+}
+
+/* Mobile: stack features as a single column
+     and flip each card to horizontal (logo left, text right) */
+@media (max-width: 900px) {
+    .features-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .feature {
+        flex-direction: row;
+        /* horizontal card */
+        align-items: center;
+        text-align: left;
+        gap: 16px;
+        padding: 12px;
+        width: 100%;
+    }
+
+    .feature-logo {
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+    }
+
+    .feature-body {
+        gap: 4px;
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+    .feature-title {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        max-width: 100%;
+        font-size: clamp(1rem, 6.5vw, 1.25rem);
+        line-height: 1.2;
+    }
+}
+
+
+/* ===== Image left / text right row ===== */
+.split-row {
+    margin: 0rem auto;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.split-media {
+    flex: 1 1 0;
+    display: flex;
+    justify-content: center;
+    min-width: 0;
+}
+
+.split-media img {
+    width: 100%;
+    max-width: 450px;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    /* driven by aspect-ratio */
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+}
+
+.split-text {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.split-text h3 {
+    margin: 0 0 6px;
+    font-size: 1.5rem;
+    /* uses your global font settings */
+    line-height: 1.2;
+}
+
+.split-text p {
+    margin: 0;
+    max-width: 60ch;
+}
+
+/* Center only the link under the left-aligned text in the split section */
+.split-text .content-link {
+    display: block;
+    width: max-content;
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 900px) {
+    .split-row {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .split-media img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+    }
+
+    .split-text {
+        text-align: left;
+    }
+}
+
+/* Tiny screens: add a bit of horizontal padding and reduce gaps */
+@media (max-width: 420px) {
+    .content-container {
+        padding-inline: 12px;
+    }
+
+    .split-row {
+        gap: 20px;
+    }
+}
+
+/* ===== Footer ===== */
+/* .site-footer {
+    background: var(--color-purple);
+    color: #f5efe6;
+} */
+
+/* .footer-upper{
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  } */
+
+/* .footer-col{ flex: 1 1 0; } */
+
+/*  
+  .brand-block{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  } */
+
+.footer-col.right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.footer-logo {
+    width: 125px;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    display: block;
+    display: flex;
+}
+
+
+.footer-heading {
+    font-size: 12rem;
+    font-weight: 400;
+    color: var(--color-green);
+}
+
+.brand-line {
+    margin: 0;
+    opacity: .9;
+}
+
+/* .footer-spacer {
+    height: 130px;
+} */
+
+/* socials */
+.footer-social {
+    display: flex;
+    gap: 32px;
+    font-size: 1.4rem;
+    padding: 32px 0;
+}
+
+.footer-social a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-social a:hover {
+    opacity: .85;
+}
+
+.footer-links {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-links a+a::before {
+    content: "•";
+    margin: 0 10px;
+    opacity: .7;
+}
+
+
+
+/* Bottom strip */
+.footer-bottom {
+    border-top: 1px solid rgba(245, 239, 230, .25);
+    padding: 12px 24px;
+    text-align: center;
+    opacity: .9;
+}
+
+/* Mobile: stack columns */
+/* @media (max-width: 900px){
+    .footer-upper{
+      flex-direction: column;
+      gap: 24px;
+    }
+    .footer-heading{ font-size: 3.2rem; }
+  }
+   */
+
+/* ===== Footer responsiveness ===== */
+@media (max-width: 900px) {
+    .footer-heading {
+        font-size: clamp(3.5rem, 20vw, 8rem);
+        text-align: center;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        line-height: 1.05;
+        width: 100%;
+        max-width: 100%;
+        margin-inline: auto;
+    }
+}
+
+@media (max-width: 560px) {
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .footer-links a+a::before {
+        content: none;
+    }
+}
+
+
+/* ===== Cameo planes ===== */
+.plane-cameo-marker {
+    height: 1px;
+    pointer-events: none;
+}
+
+.plane-cameo {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: var(--plane-w, 220px);
+    height: var(--plane-h, 220px);
+    pointer-events: none;
+    z-index: 40;
+    /* adjust if you need above/below other UI */
+    opacity: 0;
+    /* hidden when outside its window */
+    transform: translate(-9999px, -9999px);
+    transition: opacity 180ms ease;
+    /* small fade in/out */
+    will-change: transform, opacity;
+}
+
+.plane-cameo.visible {
+    opacity: 1;
+}
