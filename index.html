@@ -19,14 +19,15 @@
     <!-- Fixed transparent header -->
     <header class="site-header" id="siteHeader">
         <div class="nav-inner">
-            <a class="brand" href="/">
-                <img src="assets/images/logo.png" alt="Logo" />
+            <a class="brand" href="#" aria-label="Home">
+                <img src="assets/images/logo.inks.svg" alt="Logo">
+                <svg class="logo"><use href="assets/images/new#logo"></use></svg>
             </a>
 
             <!-- Center language selector -->
             <nav class="lang-switch" aria-label="Language">
                 <a href="#" class="lang active" lang="en">EN</a>
-                <span class="lang-sep" aria-hidden="true">/</span>
+                <span class="lang-sep" aria-hidden="true">|</span>
                 <a href="#" class="lang" lang="es">ES</a>
             </nav>
 
@@ -58,9 +59,10 @@
 
             <ul class="menu-list">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">More From Us</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="#">Other Services</a></li>
             </ul>
         </nav>
     </header>
@@ -140,7 +142,7 @@
                 <div class="col col-2">
 
                     <div class="alt-row left-image">
-                        <img class="port-img" src="assets/images/design-boceto.png" alt="Project preview" />
+                        <img class="port-img first" src="assets/images/design-boceto.png" alt="Project preview" />
                         <div class="alt-text">
                             <h3>Web Design</h3>
                             <p>Customised design for your brand</p>
@@ -152,7 +154,7 @@
                             <h3>Web Development</h3>
                             <p>Clean visuals, accessible UI, responsive by default.</p>
                         </div>
-                        <img class="port-img" src="assets/images/developing-boceto.png" alt="UI detail" />
+                        <img class="port-img middle" src="assets/images/developing-boceto.png" alt="UI detail" />
                     </div>
 
                     <div class="alt-row left-image">
@@ -206,7 +208,6 @@
                 <!-- plane cameo 3 start -->
                 <div class="plane-cameo-marker" id="plane3-start"></div>
 
-
                 <!-- Split row -->
                 <div class="split-row">
                     <div class="split-media">
@@ -224,11 +225,11 @@
                     </div>
                 </div>
 
+                <!-- theme marker -->
+                <div class="theme-marker" data-theme="theme-2"></div>
+
                 <!-- plane cameo 3 end -->
                 <div class="plane-cameo-marker" id="plane3-end"></div>
-
-                <!-- theme marker -->
-                <div class="theme-marker" data-theme="theme-1"></div>
                 
             </div>
         </section>
@@ -261,9 +262,13 @@
         </div>
 
         <div class="footer-bottom">
-            <small>© <span id="year"></span> ESBOZO. All rights reserved.</small>
+            <small>© <span id="year"></span> BOCETO. All rights reserved.</small>
         </div>
     </footer>
+
+    <!-- theme marker -->
+    <div class="theme-marker" data-theme="theme-1"></div>
+    
     <img id="plane2" class="plane-cameo" src="assets/images/plane-flight-2.svg" alt="" aria-hidden="true"
         style="--plane-w:220px; --plane-h:220px;">
     <img id="plane3" class="plane-cameo" src="assets/images/plane-flight-3.svg" alt="" aria-hidden="true"
