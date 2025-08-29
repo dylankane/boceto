@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>BOCETO</title>
+    <title>Services</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -14,7 +14,7 @@
     <script src="https://kit.fontawesome.com/d11678a87a.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="home-page-body">
+<body>
 
     <!-- Logo SVG-->
     <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden"
@@ -127,7 +127,6 @@
         </symbol>
     </svg>
 
-
     <!-- Fixed transparent header -->
     <header class="site-header" id="siteHeader">
         <div class="nav-inner">
@@ -147,6 +146,7 @@
             <!-- Hamburger -->
             <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteMenu"
                 aria-label="Open menu">
+                <!-- Inline SVG (no external icon font needed) -->
                 <svg class="icon icon-menu" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
                     <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2" fill="currentColor" />
                 </svg>
@@ -180,19 +180,19 @@
     </header>
 
     <main>
-
         <!-- Theme marker -->
-        <div class="theme-marker" data-theme="theme-1"></div>
+        <div class="theme-marker" data-theme="theme-2"></div>
 
-        <section class="hero" id="hero">
+        <section class="hero services-hero" id="hero">
+            <!-- <section> -->
 
             <div class="scene" id="scene">
-                <img class="img-bottom" id="base" src="assets/images/hand2.png" alt="Hand">
-                <img class="img-top" id="flier" src="assets/images/plane.png" alt="Paper plane">
 
-                <!-- Scene copy that fades with scroll -->
+                <!-- <img class="img-bottom" id="base" src="assets/images/hand2.png" alt="Hand">
+                <img class="img-top" id="flier" src="assets/images/plane.png" alt="Paper plane"> -->
+
                 <div class="scene-copy">
-                    <div class="details">
+                    <div class="details services-details">
                         <a href="tel:+34672355502">
                             <p>ph:<br>672355502</p>
                         </a>
@@ -205,11 +205,11 @@
                             <p>email:<br>info@esbozo.eu</p>
                         </a>
                     </div>
+                    <div class="img-services">
+                        <img src="assets/images/services-hero.png" alt="Paper plane in orange">
+                    </div>
                     <div class="subtitle" id="subtitle">
                         <p>WEB DESIGN<br>WEB DEVELOPMENT<br>WEB BRANDING</p>
-                    </div>
-                    <div class="quote" id="quote">
-                        <p>“Make it simple, but significant.”</p>
                     </div>
                     <div class="quote2" id="quote2">
                         <p>Altea<br>Alicante<br>---</p>
@@ -217,7 +217,7 @@
                 </div>
             </div>
 
-            <div class=" title-container">
+            <div class="title-container">
                 <div class="title-box">
                     <svg class="main-title-icon" viewBox="0 0 859.22 153.98" role="img" aria-label="Main title">
                         <use href="#main-title"></use>
@@ -230,129 +230,248 @@
         <!-- Theme marker -->
         <div class="theme-marker" data-theme="theme-2"></div>
 
-        <section class="content" id="content">
-            <div class="content-container">
+        <!-- Services -->
+        <section id="services" class="section-block services">
 
-                <!-- Column 1 -->
-                <div class="col col-1">
-                    <h2 class="content-title">Joining forces with ambitious companies to build a creative digital
-                        experiences</h2>
+            <div class="services-header">
+                <h1>Our Services</h1>
+            </div>
+            <!-- intro-->
+            <header class="services__intro">
+                <h2>Core Services</h2>
+                <p>Design that delights, development that performs, and branding that connects—delivered as a
+                    cohesive,
+                    conversion-focused experience.</p>
+            </header>
 
-                    <video class="land-img" autoplay muted loop playsinline preload="metadata"
-                        poster="assets/images/landscape-1.png" aria-label="Showcase video in landscape">
-                        <source src="assets/images/video-intro-1.mp4" type="video/mp4" />
-                        <!-- Fallback for very old browsers -->
-                        Your browser does not support the video tag.
-                    </video>
-
-                    <div class="content-copy">
-                        <p>
-                            We design, build, and automate web experiences that feel effortless.
-                            From branding to delivery, our focus is clarity and performance.
-                        </p>
-                        <a class="content-link" href="#">Learn more <i class="fa-solid fa-chevron-right"></i></a>
+            <div class="service-container">
+                <div class="services__band">
+                    <div class="services__media" aria-hidden="true">
+                        <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop"
+                            alt="Web design mockups on a laptop">
+                    </div>
+                    <div class="services__copy">
+                        <h3>Web Design</h3>
+                        <p>Clean, modern interfaces tailored to your brand with accessibility and mobile-first
+                            performance
+                            built in.</p>
+                        <ul class="services__points">
+                            <li>Conversion-focused layouts</li>
+                            <li>Responsive, mobile-first approach</li>
+                            <li>Design systems & component libraries</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- plane cameo 2 start -->
-                <div class="plane-cameo-marker" id="plane2-start"></div>
-
-                <!-- Column 2 -->
-                <div class="col col-2">
-
-                    <div class="alt-row left-image">
-                        <img class="port-img first" src="assets/images/design-boceto.png" alt="Project preview" />
-                        <div class="alt-text">
-                            <h3>Web Design</h3>
-                            <p>Customised design for your brand. We can create a full holistic branding strategy and
-                                this and that.</p>
-                        </div>
+                <div class="services__band services__band--reverse">
+                    <div class="services__media" aria-hidden="true">
+                        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop"
+                            alt="Code editor and development environment">
                     </div>
-
-                    <div class="alt-row right-image">
-                        <div class="alt-text">
-                            <h3>Web Development</h3>
-                            <p>Clean visuals, accessible UI, responsive by default. All built with lovely looking code
-                                wodey sure you know yourself</p>
-                        </div>
-                        <img class="port-img middle" src="assets/images/developing-boceto.png" alt="UI detail" />
-                    </div>
-
-                    <div class="alt-row left-image">
-                        <img class="port-img last" src="assets/images/branding-boceto.png" alt="Automation flow" />
-                        <div class="alt-text">
-                            <h3>Web Branding</h3>
-                            <p>Fully customised brand identity, to look like you daog or cat depending on what you
-                                prefer, it is up to you.</p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- plane cameo 2 end -->
-                <div class="plane-cameo-marker" id="plane2-end"></div>
-
-                <!-- Column 3-->
-                <div class="col col-3">
-                    <img class="title-clip" src="assets/images/title-clip-3.png" alt="title clip" />
-                </div>
-
-                <!-- Theme marker -->
-                <div class="theme-marker" data-theme="theme-3"></div>
-
-                <!-- Features row -->
-                <div class="features-row">
-                    <article class="feature">
-                        <img class="feature-logo" src="assets/images/logo-1.png" alt="Logo 1">
-                        <div class="feature-body">
-                            <h3 class="feature-title">Performance</h3>
-                            <p class="feature-text">Lean builds, optimized assets, quick Time-to-Interactive.</p>
-                        </div>
-                    </article>
-
-                    <article class="feature">
-                        <img class="feature-logo" src="assets/images/logo-2.png" alt="Logo 2">
-                        <div class="feature-body">
-                            <h3 class="feature-title">Accessibility</h3>
-                            <p class="feature-text">Keyboard friendly, readable contrast, semantic HTML.</p>
-                        </div>
-                    </article>
-
-                    <article class="feature">
-                        <img class="feature-logo" src="assets/images/logo-3.png" alt="Logo 3">
-                        <div class="feature-body">
-                            <h3 class="feature-title">Automation</h3>
-                            <p class="feature-text">Integrations that cut manual work and speed delivery.</p>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- plane cameo 3 start -->
-                <div class="plane-cameo-marker" id="plane3-start"></div>
-
-                <!-- Split row -->
-                <div class="split-row">
-                    <div class="split-media">
-                        <img src="assets/images/recurring.png" alt="Studio workspace" />
-                    </div>
-
-                    <div class="split-text">
-                        <h3>How we work</h3>
-                        <p>
-                            We keep projects lean: clear scope, short feedback loops, and fast delivery.
-                            You get a reliable build without the bloat.
-                        </p>
-                        <a class="content-link" href="#approach">Learn more <i
-                                class="fa-solid fa-chevron-right"></i></a>
+                    <div class="services__copy">
+                        <h3>Web Development</h3>
+                        <p>Fast, secure builds with maintainable code. From marketing sites to custom features and
+                            integrations—scalable by design.</p>
+                        <ul class="services__points">
+                            <li>WordPress, headless & custom stacks</li>
+                            <li>API integrations & automation</li>
+                            <li>Performance & Core Web Vitals</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- theme marker -->
-                <div class="theme-marker" data-theme="theme-2"></div>
+                <div class="services__band">
+                    <div class="services__media" aria-hidden="true">
+                        <img src="https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=1200&auto=format&fit=crop"
+                            alt="Color palettes and brand elements">
+                    </div>
+                    <div class="services__copy">
+                        <h3>Branding</h3>
+                        <p>Distinct visual identities—logos, typography, color, and tone—working together across every
+                            touchpoint.</p>
+                        <ul class="services__points">
+                            <li>Logo & identity systems</li>
+                            <li>Brand guidelines & assets</li>
+                            <li>Voice, tone & messaging</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-                <!-- plane cameo 3 end -->
-                <div class="plane-cameo-marker" id="plane3-end"></div>
+            <div class="services__extras">
+                <div class="services-extras-intro">
+                    <h3>Why choose us</h3>
+                    <p>Beyond delivery—we support, scale, and elevate your site with the
+                        essentials that matter.</p>
+                </div>
+                <div class="services-extras-container">
+                    <ul class="services__extras-grid">
+                        <li class="services__extra">
+                            <i class="fa-solid fa-camera services__extra-icon one" aria-hidden="true"></i>
+                            <h4>Photography & Video</h4>
+                            <p>In-house pros create on-brand visuals—product shoots, drone footage, and short-form video
+                                for
+                                web and socials.</p>
+                        </li>
 
+                        <li class="services__extra">
+                            <i class="fa-solid fa-server services__extra-icon two" aria-hidden="true"></i>
+                            <h4>Hosting & Maintenance</h4>
+                            <p>Fast, secure hosting on our servers plus updates, backups, monitoring, and priority
+                                fixes.
+                            </p>
+                        </li>
+                    </ul>
+
+                    <ul class="services__extras-grid">
+
+                        <li class="services__extra">
+                            <i class="fa-solid fa-magnifying-glass-chart services__extra-icon three"
+                                aria-hidden="true"></i>
+                            <h4>SEO & Marketing</h4>
+                            <p>From technical SEO to campaigns and content, we boost discoverability and turn attention
+                                into
+                                growth.</p>
+                        </li>
+
+                        <li class="services__extra">
+                            <i class="fa-solid fa-robot services__extra-icon four" aria-hidden="true"></i>
+                            <h4>AI & Automation</h4>
+                            <p>Chatbots, data pipelines, and smart workflows that reduce busywork and enhance customer
+                                experiences.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="section-block">
+            <div class="col col-3">
+                <img class="title-clip" src="assets/images/title-clip-3.png" alt="title clip" />
+            </div>
+        </section>
+
+        <!-- Theme marker -->
+        <div class="theme-marker" data-theme="theme-2"></div>
+
+
+        <!-- Projects -->
+        <section class="section-block projects">
+
+            <!-- Intro -->
+            <header class="projects__intro">
+                <h2>Our Work</h2>
+                <p>A look at some of the brands and platforms we’ve helped build, from early-stage startups to established names.</p>
+            </header>
+
+            <!-- Media Stacks -->
+            <div class="media-stacks">
+                <!-- Stack 1 -->
+                <div class="media-stack" role="group" aria-label="Image pile 1">
+                    <div class="stack-item" tabindex="0">
+                        <img src="https://images.unsplash.com/photo-1559028006-44a3a4b3636b?q=80&w=800&auto=format&fit=crop" alt="Project image 1">
+                    </div>
+                    <div class="stack-item" tabindex="0">
+                        <img src="https://images.unsplash.com/photo-1587440871875-191322ee64b0?q=80&w=800&auto=format&fit=crop" alt="Project image 2">
+                    </div>
+                    <div class="stack-item" tabindex="0">
+                        <img src="https://images.unsplash.com/photo-1516116216624-53e697314945?q=80&w=800&auto=format&fit=crop" alt="Project image 3">
+                    </div>
+                    <div class="stack-item" tabindex="0">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop" alt="Project image 4">
+                    </div>
+                </div>
+
+                <!-- Stack 2 -->
+                <div class="media-stack" role="group" aria-label="Image pile 2">
+                    <div class="stack-item" tabindex="0">
+                        <img src="https://images.unsplash.com/photo-1600880292203-942bb6ae795b?q=80&w=800&auto=format&fit=crop" alt="Project image 5">
+                    </div>
+                    <div class="stack-item" tabindex="0">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop" alt="Project image 6">
+                    </div>
+                    <div class="stack-item" tabindex="0">
+                        <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=800&auto=format&fit=crop" alt="Project image 8">
+                    </div>
+                    <div class="stack-item" tabindex="0">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop" alt="Project image 7">
+                    </div>
+                </div>
+
+                <!-- Stack 3 -->
+                <div class="media-stack" role="group" aria-label="Image pile 3">
+                    <div class="stack-item" tabindex="0">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=800&auto=format&fit=crop" alt="Project image 10">
+                    </div>
+                    <div class="stack-item" tabindex="0">
+                        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=800&auto=format&fit=crop" alt="Project image 11">
+                    </div>
+                    <div class="stack-item" tabindex="0">
+                        <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=800&auto=format&fit=crop" alt="Project image 12">
+                    </div>
+                    <div class="stack-item" tabindex="0">
+                        <img src="https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=800&auto=format&fit=crop" alt="Project image 9">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Closing -->
+            <div class="projects__closing">
+                <h2>Ready to build?</h2>
+                <p>Let's talk about your project and see how we can work together.</p>
+            <div>
+
+        </section>
+
+        <section class="section-block">
+            <div class="col col-3">
+                <img class="title-clip" src="assets/images/title-clip-3.png" alt="title clip" />
+            </div>
+        </section>
+
+        <!-- Theme marker -->
+        <div class="theme-marker" data-theme="theme-2"></div>
+
+        <!-- More From Us -->
+        <section class="more-from-us">
+            <div class="section-header">
+                <h2>More From Us</h2>
+                <p class="subtitle">Our ecosystem of companies provides a complete suite of digital, creative, and technical services. Explore what our sister brands have to offer.</p>
+            </div>
+
+            <div class="companies-grid">
+                <!-- AI Labs -->
+                <article class="company-card">
+                    <div class="card-content">
+                        <img src="assets/images/ai-labs-logo.svg" alt="AI Labs Logo" class="company-logo">
+                        <h3>AI Labs</h3>
+                        <p>Your R&D partner for bespoke AI solutions. From intelligent chatbots to complex backend automations, we build the custom software that powers your business innovation.</p>
+                    </div>
+                </article>
+
+                <!-- MKG Digital -->
+                <article class="company-card">
+                    <div class="card-content">
+                        <img src="assets/images/mkg-digital-logo.svg" alt="MKG Digital Logo" class="company-logo">
+                        <h3>MKG Digital</h3>
+                        <p>Our parent company, specializing in full-service digital marketing. We manage Google & YouTube ad campaigns, build your social media presence, create content, and offer translation services.</p>
+                    </div>
+                </article>
+
+                <!-- AVA 10 -->
+                <article class="company-card">
+                    <div class="card-content">
+                        <img src="assets/images/ava10-logo.svg" alt="AVA 10 Logo" class="company-logo">
+                        <h3>AVA 10</h3>
+                        <p>The Audio Visual Arts department. We provide professional photography, videography, and streaming services for real estate, YouTube content creators, corporate events, and more.</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="section-footer">
+                <p>All services are interchangeable. A customer of Boceto can engage the services of all or any of our sister companies seamlessly as one unified project.</p>
             </div>
         </section>
 
@@ -395,59 +514,18 @@
         </div>
     </footer>
 
-    <!-- theme marker -->
-    <div class="theme-marker" data-theme="theme-1"></div>
-
-    <img id="plane2" class="plane-cameo" src="assets/images/plane-flight-2.svg" alt="" aria-hidden="true"
-        style="--plane-w:220px; --plane-h:220px;">
-    <img id="plane3" class="plane-cameo" src="assets/images/plane-flight-3.svg" alt="" aria-hidden="true"
-        style="--plane-w:220px; --plane-h:220px;">
-
-
-    <!-- Side tab trigger -->
-    <div id="openModalTab" class="modal-tab">Contact</div>
-
-    <!-- Overlay -->
-    <div id="modalOverlay" class="modal-overlay"></div>
-
-    <!-- Modal -->
-    <div id="contactModal" class="modal">
-        <img class="modal-avatar" src="assets/images/logo-1.png" alt="Contact" />
-
-        <button class="modal-close" id="closeModalBtn">&times;</button>
-        <div>
-            <a href="tel:+34672355502">
-                <p>ph: 672355502</p>
-            </a>
-            <p>---</p>
-            <a href="https://wa.me/34672355502">
-                <p><i class="fa-brands fa-whatsapp fa-bounce fa-lg"></i></p>
-            </a>
-            <p>---</p>
-            <a href="mailto:info@esbozo.eu">
-                <p>email: info@esbozo.eu</p>
-            </a>
-        </div>
-    </div>
-
-
-    <script>
-        window.onbeforeunload = function () {
-            window.scrollTo(0, 0);
-        };
-    </script>
-
+    <!-- JS -->
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 
-    <!-- JS -->
-    <!-- Modal -->
-    <script src="assets/js/modal.js" defer></script>
+    <!-- JS Files-->
+    <script src="assets/js/stacks.js" defer></script>
     <script src="assets/js/plane-cameo.js" defer></script>
     <script src="assets/js/nav.js" defer></script>
     <script src="assets/js/theme-switcher.js" defer></script>
-    <script src="assets/js/script.js" defer></script>
+    <!-- <script src="assets/js/script.js" defer></script> -->
+
 </body>
 
 </html>
