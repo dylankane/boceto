@@ -119,7 +119,6 @@ a:hover {
     inset: 0;
     z-index: 10;
     height: 100vh;
-    /* pointer-events: none; */
 }
 
 .scene.hidden {
@@ -169,13 +168,7 @@ a:hover {
     position: absolute;
     inset: 0;
     display: block;
-    /* pointer-events: none; */
 }
-
-/* .scene-copy p {
-    font-family: 'Fira Code', monospace;
-    font-size: 1.1rem;
-} */
 
 .scene-copy a {
     text-decoration: none;
@@ -188,10 +181,6 @@ a:hover {
     top: 60%;
     translate: -50% -50%;
     text-align: right;
-    /* font-size: 1.1rem; */
-    /* font: 600 clamp(1rem, 4vw, 1.75rem)/1.2 system-ui; */
-    /* color: #f5efe6; */
-    /* text-shadow: 0 2px 10px rgba(0, 0, 0, .5); */
     opacity: 1;
     will-change: opacity;
 }
@@ -200,10 +189,7 @@ a:hover {
     font-size: 1.1rem;
 }
 
-/* .subtitle.services-subtitle {
-    position: absolute;
-    
-} */
+
 
 @media (max-width: 520px) {
     .subtitle {
@@ -215,12 +201,9 @@ a:hover {
 
 .details {
     position: absolute;
-    /* left: 10px;
-    bottom: 10px; */
     left: clamp(1rem, 4vw, 3rem);
     bottom: clamp(1rem, 10vw, 3rem);
     color: var(--accent3);
-    /* text-shadow: 0 2px 10px rgba(0, 0, 0, .5); */
     opacity: 0;
     will-change: opacity;
     text-decoration: none;
@@ -240,9 +223,6 @@ a:hover {
     text-shadow: 0 2px 10px rgba(0, 0, 0, .35);
     opacity: 0;
     will-change: opacity;
-    /* max-width: min(40ch, 45vw); */
-    /* font: 500 clamp(.9rem, 2.8vw, 1.1rem)/1.35 system-ui; */
-    /* color: #f5efe6; */
 }
 
 @media (max-width: 880px) {
@@ -265,9 +245,6 @@ a:hover {
     bottom: clamp(1rem, 4vw, 3rem);
     max-width: min(40ch, 45vw);
     text-align: right;
-    /* font: 500 clamp(.9rem, 2.8vw, 1.1rem)/1.35 system-ui; */
-    /* color: #f5efe6; */
-    /* text-shadow: 0 2px 10px rgba(0, 0, 0, .35); */
     opacity: 1;
     will-change: opacity;
     color: var(--text);
@@ -276,8 +253,6 @@ a:hover {
 main {
     position: relative;
     z-index: 0;
-    /* background: var(--color-purple);
-    color: var(--color-black); */
 }
 
 section {
@@ -289,7 +264,6 @@ section {
 }
 
 .hero {
-    /* background: #5c2b7c; */
     justify-content: flex-start;
     padding-top: clamp(3rem, 12vh, 14rem);
 }
@@ -305,21 +279,6 @@ section {
     container-type: inline-size;
 }
 
-/* .title {
-    margin: 0;
-    text-align: center;
-    line-height: 0.9;
-    font-weight: 400;
-    font-size: 22cqw;
-    text-wrap: balance;
-}
-
-@supports not (font-size: 1cqw) {
-    .title {
-        font-size: clamp(32px, 12vw, 180px);
-    }
-} */
-
 /* =========================
    Navigation (header & menu)
    ========================= */
@@ -333,7 +292,6 @@ section {
     pointer-events: auto;
 }
 
-/* 3-column header: logo | center | button */
 .nav-inner {
     height: 64px;
     display: grid;
@@ -343,27 +301,17 @@ section {
     padding: 1rem clamp(12px, 3vw, 24px);
 }
 
-/* Logo */
-/* .brand img {
-    height: 50px;
-    width: auto;
-    display: block;
-    color: var(--navbar-color);
-}  */
-
 .brand .logo {
     height: 55px;
     width: 55px;
     fill: var(--navbar-color);
-    /* display: block; */
+
 }
 
 .brand svg path {
     fill: var(--navbar-color);
 }
 
-
-/* Language selector (centered) */
 .lang-switch {
     justify-self: center;
     display: inline-flex;
@@ -392,11 +340,7 @@ section {
     color: var(--color-green);
 }
 
-/* .lang-switch .lang-sep {
-    opacity: .4;
-} */
 
-/* Hamburger */
 .menu-toggle {
     display: inline-flex;
     align-items: center;
@@ -406,7 +350,6 @@ section {
     border: 0;
     background: transparent;
     color: var(--navbar-color);
-    /* border-radius: 10px; */
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
     transition: transform .15s ease;
@@ -432,7 +375,6 @@ section {
     display: block;
 }
 
-/* Fullscreen overlay that slides in from the right */
 .menu-overlay {
     position: fixed;
     inset: 0;
@@ -441,9 +383,7 @@ section {
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     transform: translateX(100%);
-    /* start off-canvas to the right */
     opacity: 1;
-    /* keep 1 so only transform animates */
     pointer-events: none;
     transition: transform .28s ease;
 }
@@ -453,7 +393,6 @@ section {
     pointer-events: auto;
 }
 
-/* Exit button inside the overlay */
 .menu-exit {
     position: absolute;
     top: 14px;
@@ -475,7 +414,6 @@ section {
     transform: scale(0.96);
 }
 
-/* Centered menu list */
 .menu-list {
     list-style: none;
     margin: 0;
@@ -502,13 +440,6 @@ section {
     color: var(--color-orange);
 }
 
-/* Lock page scroll when menu is open */
-/* html.no-scroll,
-body.no-scroll {
-    overflow: hidden !important;
-} */
-
-/* Smaller header on narrow screens */
 @media (max-width: 520px) {
     .nav-inner {
         height: 56px;
@@ -521,7 +452,6 @@ body.no-scroll {
 
 /* ============ Main content (Flex, simple) ============ */
 
-
 .content-container {
     max-width: 1100px;
     width: 75vw;
@@ -531,7 +461,6 @@ body.no-scroll {
     gap: 200px;
 }
 
-/* Column 1: centered stack */
 .col-1 {
     flex: 1;
     display: flex;
@@ -548,7 +477,6 @@ body.no-scroll {
     margin-bottom: 2rem;
 }
 
-/* Landscape image (fixed size; responsive width cap) */
 .land-img {
     width: 700px;
     max-width: 100%;
@@ -566,12 +494,9 @@ body.no-scroll {
 .content-link {
     position: relative;
     display: inline-block;
-    /* needed for transform */
     color: inherit;
     text-decoration: none;
-    /* remove default underline */
     transition: transform 0.3s ease;
-    /* smooth scale */
 }
 
 .content-link::after {
@@ -579,11 +504,9 @@ body.no-scroll {
     position: absolute;
     left: 0;
     bottom: -3px;
-    /* adjust to match your desired offset */
     width: 100%;
     height: 1.5px;
     background-color: currentColor;
-    /* matches text color */
     transform-origin: left;
     transform: scaleX(1);
     opacity: 1;
@@ -592,30 +515,13 @@ body.no-scroll {
 
 .content-link:hover {
     transform: scale(1.1);
-    /* smooth grow */
 }
 
 .content-link:hover::after {
     transform: scaleX(0);
-    /* underline shrinks */
     opacity: 0;
-    /* fades out */
 }
 
-
-
-/* .content-link {
-    color: inherit;
-    text-decoration: underline;
-    text-underline-offset: 5px;
-    text-decoration-thickness: 1.5px;
-}
-
-.content-link:hover {
-    text-decoration: none;
-} */
-
-/* Column 2: alternating rows */
 .col-2 {
     flex: 1;
     display: flex;
@@ -668,12 +574,6 @@ body.no-scroll {
     aspect-ratio: 3 / 4;
 }
 
-/* Text next to images */
-/* .alt-text {
-    max-width: 46ch;
-    min-width: 0;
-} */
-
 .left-image .alt-text {
     text-align: left;
 }
@@ -702,28 +602,15 @@ body.no-scroll {
     .alt-row {
         align-items: flex-start;
         flex-direction: column;
-        /* text-align: center; */
-        /* gap: 16px; */
     }
 
     .alt-row .alt-text {
         width: 100%;
-        /* max-width: 300px; */
         text-align: left;
         min-width: 0;
         word-wrap: break-word;
         overflow-wrap: anywhere;
     }
-
-    /* .port-img {
-        width: 100%;
-        max-width: 300px;
-        height: auto;
-    } */
-
-    /* .port-img.middle {
-        max-width: 420px;
-    } */
 
     .alt-row.right-image {
         flex-direction: column-reverse;
@@ -763,15 +650,12 @@ body.no-scroll {
     flex: 1 1 0;
     display: flex;
     flex-direction: column;
-    /* desktop: vertical stack */
     align-items: center;
     text-align: center;
     gap: 12px;
     padding: 24px;
     border-radius: 12px;
-    /* optional subtle card feel */
-    /* box-shadow: 0 6px 24px rgba(0,0,0,.06); */
-    /* background: rgba(255,255,255,.04); */
+
     min-width: 0;
 }
 
@@ -800,8 +684,6 @@ body.no-scroll {
     opacity: .9;
 }
 
-/* Mobile: stack features as a single column
-     and flip each card to horizontal (logo left, text right) */
 @media (max-width: 900px) {
     .features-row {
         flex-direction: column;
@@ -860,7 +742,6 @@ body.no-scroll {
     max-width: 450px;
     aspect-ratio: 1 / 1;
     height: auto;
-    /* driven by aspect-ratio */
     object-fit: cover;
     border-radius: 16px;
     display: block;
@@ -877,7 +758,6 @@ body.no-scroll {
 .split-text h3 {
     margin: 0 0 6px;
     font-size: 1.5rem;
-    /* uses your global font settings */
     line-height: 1.2;
 }
 
@@ -886,13 +766,11 @@ body.no-scroll {
     max-width: 60ch;
 }
 
-/* Center only the link under the left-aligned text in the split section */
 .split-text .content-link {
     display: block;
     width: max-content;
 }
 
-/* Mobile: stack vertically */
 @media (max-width: 900px) {
     .split-row {
         flex-direction: column;
@@ -910,7 +788,6 @@ body.no-scroll {
     }
 }
 
-/* Tiny screens: add a bit of horizontal padding and reduce gaps */
 @media (max-width: 420px) {
     .content-container {
         padding-inline: 12px;
@@ -922,28 +799,6 @@ body.no-scroll {
 }
 
 /* ===== Footer ===== */
-/* .site-footer {
-    background: var(--color-purple);
-    color: #f5efe6;
-} */
-
-/* .footer-upper{
-    padding: 0 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-  } */
-
-/* .footer-col{ flex: 1 1 0; } */
-
-/*  
-  .brand-block{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  } */
 
 .footer-col.right {
     display: flex;
@@ -953,15 +808,6 @@ body.no-scroll {
     min-width: 0;
 }
 
-/* .footer-logo {
-    width: 125px;
-    max-width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: contain;
-    display: block;
-    display: flex;
-} */
-
 .footer-brand-icon {
     width: 125px;
 }
@@ -970,20 +816,10 @@ body.no-scroll {
     padding: 0 1rem;
 }
 
-/* .footer-heading {
-    font-size: 12rem;
-    font-weight: 400;
-    color: var(--color-green);
-} */
-
 .brand-line {
     margin: 0;
     opacity: .9;
 }
-
-/* .footer-spacer {
-    height: 130px;
-} */
 
 /* socials */
 .footer-social {
@@ -1027,16 +863,6 @@ body.no-scroll {
     text-align: center;
     opacity: .9;
 }
-
-/* Mobile: stack columns */
-/* @media (max-width: 900px){
-    .footer-upper{
-      flex-direction: column;
-      gap: 24px;
-    }
-    .footer-heading{ font-size: 3.2rem; }
-  }
-   */
 
 /* ===== Footer responsiveness ===== */
 @media (max-width: 900px) {
@@ -1085,12 +911,9 @@ body.no-scroll {
     height: var(--plane-h, 220px);
     pointer-events: none;
     z-index: 40;
-    /* adjust if you need above/below other UI */
     opacity: 0;
-    /* hidden when outside its window */
     transform: translate(-9999px, -9999px);
     transition: opacity 180ms ease;
-    /* small fade in/out */
     will-change: transform, opacity;
 }
 
@@ -1110,7 +933,6 @@ body.no-scroll {
     height: auto;
     left: 20rem;
     bottom: 8rem;
-    /* transform: translate(-50%, -50%); */
 }
 
 .img-services img {
@@ -1190,8 +1012,6 @@ body.no-scroll {
     display: flex;
     align-items: center;
     gap: 2rem;
-    /* margin-top: clamp(1.5rem, 3vw, 2rem);
-    padding-block: clamp(1rem, 2.5vw, 1.5rem); */
 }
 
 .services__band--reverse {
@@ -1320,7 +1140,6 @@ body.no-scroll {
     flex-direction: column;
     align-items: center;
     gap: 4rem;
-    /* Vertical gap between intro, stacks, and closing */
 }
 
 .projects__intro,
@@ -1340,18 +1159,15 @@ body.no-scroll {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Center the stacks horizontally */
+
     gap: 130px;
 }
 
 .media-stack {
     position: relative;
     width: 75%;
-    /* Control the width of the stack container */
     max-width: 600px;
-    /* Max width for larger screens */
     height: 450px;
-    /* Give the container a fixed height */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1367,11 +1183,9 @@ body.no-scroll {
     transition: transform .18s ease, box-shadow .18s ease;
     cursor: pointer;
     outline: none;
-    /* Apply CSS variables for transform */
     transform: rotate(var(--rot, 0deg)) translate(var(--x, 0), var(--y, 0));
 }
 
-/* media fills item */
 .stack-item img,
 .stack-item video {
     display: block;
@@ -1380,8 +1194,6 @@ body.no-scroll {
     object-fit: cover;
 }
 
-
-/* Set initial position and z-index for each item in the stack */
 .stack-item:nth-child(1) {
     --rot: -10deg;
     --x: -25%;
@@ -1410,31 +1222,22 @@ body.no-scroll {
     z-index: 4;
 }
 
-/* Bring to front on hover (desktop) */
 .stack-item:hover {
     z-index: 9;
 }
 
-/* Mobile-specific classes for JS */
 .is-cycling-top {
     z-index: 9 !important;
-    /* Bring to top during carousel */
 }
 
 .is-pinned-top {
     z-index: 10 !important;
-    /* Keep on top after click/tap */
 }
 
 .inactive-stack {
     pointer-events: none;
-    /* Make non-centered stacks unclickable */
 }
 
-
-/* notes list */
-
-/* Responsive adjustments */
 @media (max-width: 880px) {
     .media-stack {
         height: 50vh;
@@ -1484,7 +1287,6 @@ body.no-scroll {
 .companies-grid {
     display: flex;
     flex-direction: column;
-    /* grid-template-columns: repeat(3, 1fr); */
     gap: 3rem;
 }
 
@@ -1513,7 +1315,6 @@ body.no-scroll {
     text-align: center;
     gap: 1rem;
     transform: translateZ(25px);
-    /* Gives a bit of depth */
 }
 
 .company-logo {
@@ -1522,14 +1323,11 @@ body.no-scroll {
     max-width: 120px;
     margin-bottom: 0.5rem;
     filter: invert(var(--logo-filter, 0));
-    /* Will be used to switch color in themes */
 }
 
-/* Adjust logo color based on theme */
 body[data-theme="theme-1"] .company-logo,
 body[data-theme="theme-3"] .company-logo {
     --logo-filter: 1;
-    /* Invert to white */
 }
 
 .company-card h3 {
@@ -1543,17 +1341,12 @@ body[data-theme="theme-3"] .company-logo {
     line-height: 1.6;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 580px) {
 
     .company-card {
         padding: 2rem 1rem
     }
-
-    /* .companies-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    } */
 }
 
 
@@ -1592,12 +1385,6 @@ body[data-theme="theme-3"] .company-logo {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
     display: none;
     z-index: 1001;
-
-    /* NEW: center content */
-    /* display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center; */
 
     --avatar: 15vw;
     --overlap: 0.56;
