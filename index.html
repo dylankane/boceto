@@ -16,6 +16,14 @@
 
 <body class="home-page-body">
 
+    <!-- Arrow down SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden"
+        aria-hidden="true">
+        <symbol id="arrow-down" viewBox="0 0 24 24">
+            <path d="M12 3v13M6 13l6 8 6-8" />
+        </symbol>
+    </svg>
+
     <!-- Logo SVG-->
     <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden"
         aria-hidden="true">
@@ -194,7 +202,7 @@
                 <div class="scene-copy">
                     <div class="details">
                         <a href="tel:+34672355502">
-                            <p>ph:<br>672355502</p>
+                            <p>Tel:<br>672355502</p>
                         </a>
                         <p>---</p>
                         <a href="https://wa.me/34672355502">
@@ -202,14 +210,14 @@
                         </a>
                         <p>---</p>
                         <a href="mailto:info@esbozo.eu">
-                            <p>email:<br>info@esbozo.eu</p>
+                            <p>Email:<br>info@esbozo.eu</p>
                         </a>
                     </div>
                     <div class="subtitle" id="subtitle">
                         <p>WEB DESIGN<br>WEB DEVELOPMENT<br>WEB BRANDING</p>
                     </div>
                     <div class="quote" id="quote">
-                        <p>“Make it simple, but significant.”</p>
+                        <p>“Beauty in function, meaning in design”</p>
                     </div>
                     <div class="quote2" id="quote2">
                         <p>Altea<br>Alicante<br>---</p>
@@ -227,11 +235,13 @@
             </div>
         </section>
 
-        <!-- Theme marker -->
-        <div class="theme-marker" data-theme="theme-2"></div>
+
 
         <section class="content" id="content">
             <div class="content-container">
+
+                <!-- Theme marker -->
+                <div class="theme-marker" data-theme="theme-2"></div>
 
                 <!-- Column 1 -->
                 <div class="col col-1">
@@ -250,8 +260,12 @@
                             We design, build, and automate web experiences that feel effortless.
                             From branding to delivery, our focus is clarity and performance.
                         </p>
-                        <a class="content-link" href="#">Learn more <i class="fa-solid fa-chevron-right"></i></a>
+                        <a class="content-link" href="#">Learn more
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
                     </div>
+                    <!-- Theme marker -->
+                    <div class="theme-marker" data-theme="theme-2"></div>
                 </div>
 
                 <!-- plane cameo 2 start -->
@@ -260,20 +274,27 @@
                 <!-- Column 2 -->
                 <div class="col col-2">
 
+                    <!-- Theme marker -->
+                    <div class="theme-marker" data-theme="theme-3"></div>
+
                     <div class="alt-row left-image">
                         <img class="port-img first" src="assets/images/design-boceto.png" alt="Project preview" />
                         <div class="alt-text">
                             <h3>Web Design</h3>
-                            <p>Customised design for your brand. We can create a full holistic branding strategy and
-                                this and that.</p>
+                            <p>Clean, modern designs that showcase your brand and engage visitors.</p>
+                            <a class="content-link" href="#">Learn more
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
 
                     <div class="alt-row right-image">
                         <div class="alt-text">
                             <h3>Web Development</h3>
-                            <p>Clean visuals, accessible UI, responsive by default. All built with lovely looking code
-                                wodey sure you know yourself</p>
+                            <p>Fast, secure builds with custom features tailored to your business.</p>
+                            <a class="content-link" href="#">Learn more
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
                         </div>
                         <img class="port-img middle" src="assets/images/developing-boceto.png" alt="UI detail" />
                     </div>
@@ -282,8 +303,10 @@
                         <img class="port-img last" src="assets/images/branding-boceto.png" alt="Automation flow" />
                         <div class="alt-text">
                             <h3>Web Branding</h3>
-                            <p>Fully customised brand identity, to look like you daog or cat depending on what you
-                                prefer, it is up to you.</p>
+                            <p>Distinct identities that connect with your audience across every touchpoint.</p>
+                            <a class="content-link" href="#">Learn more
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
 
@@ -297,34 +320,41 @@
                     <img class="title-clip" src="assets/images/title-clip-3.png" alt="title clip" />
                 </div>
 
-                <!-- Theme marker -->
-                <div class="theme-marker" data-theme="theme-3"></div>
-
                 <!-- Features row -->
-                <div class="features-row">
-                    <article class="feature">
-                        <img class="feature-logo" src="assets/images/logo-1.png" alt="Logo 1">
-                        <div class="feature-body">
-                            <h3 class="feature-title">Performance</h3>
-                            <p class="feature-text">Lean builds, optimized assets, quick Time-to-Interactive.</p>
-                        </div>
-                    </article>
+                <div>
+                    <div class="features-row">
+                        <article class="feature">
+                            <img class="feature-logo" src="assets/images/logo-1.png" alt="Logo 1">
+                            <div class="feature-body">
+                                <h3 class="feature-title">Performance</h3>
+                                <p class="feature-text">Fast, reliable sites built to load quickly and run smoothly on any device.</p>
+                            </div>
+                        </article>
 
-                    <article class="feature">
-                        <img class="feature-logo" src="assets/images/logo-2.png" alt="Logo 2">
-                        <div class="feature-body">
-                            <h3 class="feature-title">Accessibility</h3>
-                            <p class="feature-text">Keyboard friendly, readable contrast, semantic HTML.</p>
-                        </div>
-                    </article>
+                        <article class="feature">
+                            <img class="feature-logo" src="assets/images/logo-2.png" alt="Logo 2">
+                            <div class="feature-body">
+                                <h3 class="feature-title">Photography</h3>
+                                <p class="feature-text">Original photos and video, shot in-house to showcase your brand authentically.</p>
+                            </div>
+                        </article>
 
-                    <article class="feature">
-                        <img class="feature-logo" src="assets/images/logo-3.png" alt="Logo 3">
-                        <div class="feature-body">
-                            <h3 class="feature-title">Automation</h3>
-                            <p class="feature-text">Integrations that cut manual work and speed delivery.</p>
-                        </div>
-                    </article>
+                        <article class="feature">
+                            <img class="feature-logo" src="assets/images/logo-3.png" alt="Logo 3">
+                            <div class="feature-body">
+                                <h3 class="feature-title">Hosting & Care</h3>
+                                <p class="feature-text">Secure hosting, domain setup, and ongoing maintenance handled for you.</p>
+                            </div>
+                        </article>
+
+                    </div>
+                    <!-- Theme marker -->
+                    <div class="theme-marker" data-theme="theme-3"></div>
+                    <div class="features-link">
+                        <a class="content-link" href="#approach">And much more....
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- plane cameo 3 start -->
@@ -332,23 +362,21 @@
 
                 <!-- Split row -->
                 <div class="split-row">
+                    <!-- theme marker -->
+                    <div class="theme-marker" data-theme="theme-2"></div>
                     <div class="split-media">
                         <img src="assets/images/recurring.png" alt="Studio workspace" />
                     </div>
 
                     <div class="split-text">
                         <h3>How we work</h3>
-                        <p>
-                            We keep projects lean: clear scope, short feedback loops, and fast delivery.
-                            You get a reliable build without the bloat.
-                        </p>
-                        <a class="content-link" href="#approach">Learn more <i
-                                class="fa-solid fa-chevron-right"></i></a>
+                        <p>We run projects lean and focused, with a clear scope, quick feedback cycles, and fast delivery.
+                            The result: a reliable build without unnecessary complexity.</p>
+                        <a class="content-link" href="#approach">Contact Us
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
-
-                <!-- theme marker -->
-                <div class="theme-marker" data-theme="theme-2"></div>
 
                 <!-- plane cameo 3 end -->
                 <div class="plane-cameo-marker" id="plane3-end"></div>
@@ -379,9 +407,10 @@
                 </div>
                 <nav class="footer-links" aria-label="Pages">
                     <a href="/">Home</a>
-                    <a href="/portfolio">Portfolio</a>
-                    <a href="/contact">Contact</a>
-                    <a href="/services">Other Services</a>
+                    <a href="/portfolio">Contact Us</a>
+                    <a href="/contact">Our Services</a>
+                    <a href="/services">Our Work</a>
+                    <a href="/services">Our World</a>
                 </nav>
                 <nav class="footer-links" aria-label="Pages">
                     <a href="#">Cookies</a>
@@ -393,10 +422,11 @@
         <div class="footer-bottom">
             <small>© <span id="year"></span> BOCETO. All rights reserved.</small>
         </div>
+        <!-- theme marker -->
+        <div class="theme-marker" data-theme="theme-1"></div>
     </footer>
 
-    <!-- theme marker -->
-    <div class="theme-marker" data-theme="theme-1"></div>
+
 
     <img id="plane2" class="plane-cameo" src="assets/images/plane-flight-2.svg" alt="" aria-hidden="true"
         style="--plane-w:220px; --plane-h:220px;">
@@ -417,7 +447,7 @@
         <button class="modal-close" id="closeModalBtn">&times;</button>
         <div>
             <a href="tel:+34672355502">
-                <p>ph: 672355502</p>
+                <p>Tel: 672355502</p>
             </a>
             <p>---</p>
             <a href="https://wa.me/34672355502">
@@ -425,7 +455,7 @@
             </a>
             <p>---</p>
             <a href="mailto:info@esbozo.eu">
-                <p>email: info@esbozo.eu</p>
+                <p>Email: info@esbozo.eu</p>
             </a>
         </div>
     </div>
