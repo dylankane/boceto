@@ -1,27 +1,35 @@
 # Enable rewrite engine
 RewriteEngine On
 
-# --- Redirect .html to clean URL ---
-# e.g. /about.html -> /about
-RewriteCond %{THE_REQUEST} \s/+([^.]+)\.html[\s?]
+# Always serve index.html for directory requests
+DirectoryIndex index.html
+
+# 0) Let real files pass straight through (but NOT directories)
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# 1) Redirect /something.html -> /something  (only for user-typed URLs)
+RewriteCond %{THE_REQUEST} \s/([^\s?]+)\.html[\s?] [NC]
 RewriteRule ^ %1 [R=301,L]
 
-# --- Serve .html when extension not given ---
-# e.g. /about -> /about.html
-RewriteCond %{REQUEST_FILENAME} !-d
+# 2) Internally serve .html when extension omitted
+#    /something -> /something.html  (no visible redirect)
 RewriteCond %{REQUEST_FILENAME}\.html -f
-RewriteRule ^([^/]+)/?$ $1.html [L]
+RewriteRule ^(.+)$ $1.html [L]
 
-# --- Language detection & redirect ---
-# If the URL does not already start with /es/ or /en/
-RewriteCond %{REQUEST_URI} !^/(es|en)/
-# and the browser language is English
+# 2a) Language roots: /en/ or /es/ -> their index.html
+RewriteRule ^(en|es)/?$ $1/index.html [L]
+
+# 3) Language detection (only if no /en/ or /es/ prefix yet)
+RewriteCond %{REQUEST_URI} !^/(en|es)/ [NC]
+RewriteCond %{REQUEST_URI} !^/\.well-known/ [NC]
+# English browsers -> /en/...
 RewriteCond %{HTTP:Accept-Language} ^en [NC]
-RewriteRule ^(.*)$ en/$1 [R=302,L]
+RewriteRule ^(.*)$ /en/$1 [R=302,L]
 
-# If no language prefix, send to Spanish by default
-RewriteCond %{REQUEST_URI} !^/(es|en)/
-RewriteRule ^(.*)$ es/$1 [R=302,L]
+# Default (Spanish) if still no prefix
+RewriteCond %{REQUEST_URI} !^/(en|es)/ [NC]
+RewriteRule ^(.*)$ /es/$1 [R=302,L]
 
-# --- Custom error pages ---
+# 4) Custom error page (URL path, not filesystem path)
 ErrorDocument 404 /es/404.html
