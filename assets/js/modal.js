@@ -22,6 +22,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (closeBtn) closeBtn.addEventListener("click", closeModal);
   if (overlay) overlay.addEventListener("click", closeModal);
 
+  const openModalLinks = document.querySelectorAll(".open-modal-link");
+  openModalLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      openModal();
+    });
+  });
+
   // ESC key
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeModal();

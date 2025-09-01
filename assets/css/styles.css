@@ -1629,9 +1629,9 @@ body[data-theme="theme-3"] .company-logo {
 }
 
 .title-arrow {
-    position:absolute;
-    top:75%;
-    left:50%;
+    position: absolute;
+    top: 75%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 
@@ -1689,4 +1689,114 @@ body[data-theme="theme-3"] .company-logo {
     top: 66%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+/* ===== Cookies ===== */
+/* Overlay */
+.ck-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease;
+    z-index: 2000;
+}
+
+.ck-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Bottom sheet modal */
+.ck-modal {
+    width: 90%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    padding: 2rem;
+    gap: 2rem;
+    transform: translate(-50%, 100%);
+    box-sizing: border-box;
+    background: var(--color-cream);
+    color: var(--color-dark);
+    border-radius: 4px;
+    box-shadow: 0 -16px 60px rgba(0, 0, 0, .25);
+    pointer-events: none;
+    transition: transform .28s ease;
+    z-index: 2001;
+}
+
+.ck-modal.open {
+    transform: translate(-50%, 0);
+    pointer-events: auto;
+}
+
+/* Close button */
+.ck-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    border: 0;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* Header + text */
+.ck-title {
+    margin: 0 0 .5rem;
+    text-align: center;
+    color: var(--color-black, #111);
+}
+
+.ck-text {
+    margin: 0;
+    text-align: center;
+    line-height: 1.4;
+    color: var(--color-dark, #222);
+}
+
+
+.ck-actions {
+    margin-top: auto;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+}
+
+.ck-btn {
+    border: 0;
+    padding: 10px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    background: var(--color-green, #0066cc);
+    color: var(--color-white, #fff);
+    width: 50%;
+}
+
+.ck-btn--ghost {
+    background: #f0d5d6;
+    color: var(--color-dark, #222);
+}
+
+.ck-btn:hover {
+    filter: brightness(.97);
+}
+
+/* Small screens */
+@media (max-width: 560px) {
+    .ck-modal {
+        padding: 1rem 1rem 2rem 1rem;
+    }
+    .ck-btn {
+        width: 90%
+    }
 }

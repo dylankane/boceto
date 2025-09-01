@@ -1,0 +1,27 @@
+# Enable rewrite engine
+RewriteEngine On
+
+# --- Redirect .html to clean URL ---
+# e.g. /about.html -> /about
+RewriteCond %{THE_REQUEST} \s/+([^.]+)\.html[\s?]
+RewriteRule ^ %1 [R=301,L]
+
+# --- Serve .html when extension not given ---
+# e.g. /about -> /about.html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([^/]+)/?$ $1.html [L]
+
+# --- Language detection & redirect ---
+# If the URL does not already start with /es/ or /en/
+RewriteCond %{REQUEST_URI} !^/(es|en)/
+# and the browser language is English
+RewriteCond %{HTTP:Accept-Language} ^en [NC]
+RewriteRule ^(.*)$ en/$1 [R=302,L]
+
+# If no language prefix, send to Spanish by default
+RewriteCond %{REQUEST_URI} !^/(es|en)/
+RewriteRule ^(.*)$ es/$1 [R=302,L]
+
+# --- Custom error pages ---
+ErrorDocument 404 /es/404.html
